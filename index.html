@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0f3b2e" />
-  <meta name="description" content="RÜKÛ — Hanefî esaslı, adım adım namaz öğrenme prototipi." />
+  <meta name="description" content="RÜKÛ — Hanefî esaslı, adım adım namaz öğrenme rehberi." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <link rel="manifest" href="manifest.webmanifest" />
   <title>RÜKÛ — Namaz Rehberi</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -55,5 +58,6 @@
   </div>
 
   <script src="app.js"></script>
+  <script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
 </body>
 </html>

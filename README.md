@@ -1,24 +1,27 @@
-# RÜKÛ — Namaz Rehberi (MVP)
+# RÜKÛ — Namaz Rehberi (MVP v2)
 
-GitHub Pages üzerinde çalışabilen, tamamen istemci tarafında hazırlanmış HTML/CSS/JavaScript prototipidir.
-
-## Çalıştırma
-
-1. `index.html`, `style.css` ve `app.js` dosyalarını aynı GitHub repo'suna koyun.
-2. GitHub → Settings → Pages → Deploy from branch → `main` / `/root` seçin.
-3. Oluşan Pages adresini mobil tarayıcıdan açabilirsiniz.
+GitHub Pages üzerinde çalışabilen, istemci tarafında hazırlanmış mobil öncelikli prototiptir.
 
 ## Özellikler
 
-- Beş vakit namaz paneli
-- Sabah / Öğle / İkindi / Akşam / Yatsı için rekât bazlı rehber
-- Vitir rehberi
-- Cuma, bayram, teravih, cenaze, teheccüd, kuşluk/işrak, istihare, hacet kartları
-- Dua ekranı: Arapça + Türkçe okunuş
-- Mobil uyumlu tasarım
-- Üretim sürümünde video URL'leri eklenebilecek alan
-- Mezhep farklılıklarını içerik katmanında ayırmaya uygun yapı
+- 5 vakit namaz paneli
+- Sabah / Öğle / İkindi / Akşam / Yatsı için rekât bazlı adım rehberi
+- Hanefî uygulamasına göre farklı dört rekât sünnet akışları
+- Vitir, Cuma, Bayram, Teravih, Cenaze, Teheccüd, Kuşluk/İşrak, İstihare ve Hacet kartları
+- Arapça + Türkçe okunuş dua ekranı
+- Mobil uyumlu ana menü
+- GitHub Pages üzerinde PWA kurulabilir yapı
+- Kaynak bağlantıları
 
-## Önemli içerik notu
+## GitHub Pages
 
-Bu dosya üretim öncesi MVP'dir. Dinî içerik yayına alınmadan önce Diyanet veya alanında yetkin ilahiyat danışmanı tarafından madde madde editoryal kontrolden geçirilmelidir.
+Dosyaları repository köküne yükleyin ve `Settings → Pages → Deploy from branch → main → /root` seçin.
+
+## Dinî içerik notu
+
+Bu sürüm Türkiye'de yaygın Hanefî uygulamasını temel alır. Mezhepler arasında farklılık bulunan noktalar ayrıca etiketlenmelidir. Yayına çıkmadan önce tüm Arapça metinler, kılınış adımları ve hüküm etiketleri Diyanet veya ehil bir ilahiyat editörü tarafından madde madde kontrol edilmelidir.
+
+## Kaynaklar
+
+- Diyanet Namaz İlmihali: https://namaz.diyanet.gov.tr/namaz/assets/dosya/Namaz_ilmihali_2011%28SON%29.pdf
+- Diyanet Din İşleri Yüksek Kurulu: https://kurul.diyanet.gov.tr/

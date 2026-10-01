@@ -1,0 +1,11 @@
+{
+  "name": "RÜKÛ — Namaz Rehberi",
+  "short_name": "RÜKÛ",
+  "lang": "tr-TR",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f0e7",
+  "theme_color": "#0f3b2e",
+  "description": "Adım adım namaz öğrenme ve dua rehberi.",
+  "icons": [{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

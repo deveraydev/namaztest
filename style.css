@@ -173,3 +173,21 @@ h1{font-size:clamp(26px,4vw,44px);line-height:1.08;margin:0;color:var(--green);m
   .all-prayers,.dua-grid{grid-template-columns:1fr}
   .step-card{min-height:390px}
 }
+
+/* RÜKÛ V2 dashboard */
+.dashboard-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.mini-stat,.mini-action{border:1px solid var(--line);background:rgba(255,253,248,.92);border-radius:18px;padding:16px;box-shadow:0 8px 28px rgba(48,44,30,.04)}
+.mini-stat span{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:800}
+.mini-stat strong{display:block;color:var(--green);font-size:18px;margin-top:5px}
+.mini-stat small,.mini-action small{display:block;color:var(--muted);font-size:11px;margin-top:4px;line-height:1.45}
+.mini-action{display:flex;align-items:center;gap:12px;cursor:pointer;transition:.2s}
+.mini-action:hover{transform:translateY(-2px);border-color:#d6c9ac}
+.mini-action>span{width:38px;height:38px;border-radius:12px;background:var(--gold-soft);display:grid;place-items:center;color:#765b21;font-weight:800;flex:none}
+.mini-action div{min-width:0;flex:1}.mini-action strong{color:var(--green);font-size:13px}.mini-action b{color:var(--green);font-size:20px}
+.posture-glyph{position:absolute;inset:0;display:grid;place-items:center;font-size:112px;color:#d9b657;font-weight:700;opacity:.9;transform:translateY(-5px);text-shadow:0 14px 32px rgba(0,0,0,.15);font-family:Georgia,serif}
+.video-shell .crescent{z-index:0}.video-shell .posture-glyph{z-index:1}.video-shell>span{z-index:2}
+.source-link{display:inline-block;margin-top:12px;color:var(--green-2);font-size:11px;font-weight:800;text-decoration:none}
+.action-btn:disabled{opacity:.42;cursor:not-allowed}
+.step-tabs{display:flex;flex-wrap:wrap}
+@media (max-width:980px){.dashboard-strip{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.dashboard-strip{grid-template-columns:1fr 1fr}.mini-action{grid-column:1/-1}.posture-glyph{font-size:86px}}

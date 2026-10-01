@@ -39,6 +39,11 @@ const dua = {
     arabic: 'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ',
     translit: 'Rabbenâ âtinâ fid-dünyâ haseneten ve fil-âhireti haseneten ve kınâ azâben-nâr.'
   },
+  rabbena_magfira: {
+    title: 'Rabbenâğfir Lî',
+    arabic: 'رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ',
+    translit: 'Rabbenâğfir lî ve li-vâlideyye ve lil-mü’minîne yevme yekûmü’l-hisâb.'
+  },
   qunut1: {
     title: 'Kunut Duası 1',
     arabic: 'اللَّهُمَّ إِنَّا نَسْتَعِينُكَ وَنَسْتَغْفِرُكَ وَنُؤْمِنُ بِكَ وَنَتَوَكَّلُ عَلَيْكَ وَنُثْنِي عَلَيْكَ الْخَيْرَ كُلَّهُ نَشْكُرُكَ وَلَا نَكْفُرُكَ وَنَخْلَعُ وَنَتْرُكُ مَنْ يَفْجُرُكَ',
@@ -101,18 +106,44 @@ function maghribFarzSteps(){
   ];
 }
 
+function fourSunnahMuakkadSteps(){
+  return [
+    ['1. ADIM','Niyet ve iftitah tekbiri','Kıbleye dönülür, namaza niyet edilir. “Allâhu ekber” denilerek namaza başlanır; Sübhaneke okunur.','subhanaka'],
+    ['2. ADIM','Birinci rekât','Eûzü-besmele, Fâtiha ve zamm-ı sûre okunur; ardından rükû ve iki secde yapılır.',''],
+    ['3. ADIM','İkinci rekât','Besmele, Fâtiha ve zamm-ı sûre okunur; rükû ve iki secde yapılır.',''],
+    ['4. ADIM','İlk oturuş','İkinci rekât sonunda oturulur ve yalnız Ettehiyyâtü okunur. Salli ve Bârik okunmadan üçüncü rekâta kalkılır.','tahiyyat'],
+    ['5. ADIM','Üçüncü rekât','Besmele, Fâtiha ve zamm-ı sûre okunur; rükû ve iki secde yapılır.',''],
+    ['6. ADIM','Dördüncü rekât','Besmele, Fâtiha ve zamm-ı sûre okunur; rükû ve iki secde yapılır.',''],
+    ['7. ADIM','Son oturuş','Ettehiyyâtü, Salli, Bârik ve Rabbenâ duaları okunur.','tahiyyat'],
+    ['8. ADIM','Selam','Önce sağa, sonra sola selam verilerek namaz tamamlanır.','']
+  ];
+}
+
+function fourSunnahGayrMuakkadSteps(){
+  return [
+    ['1. ADIM','Niyet ve iftitah tekbiri','Kıbleye dönülür, niyet edilir; “Allâhu ekber” denilerek namaza başlanır ve Sübhaneke okunur.','subhanaka'],
+    ['2. ADIM','Birinci rekât','Eûzü-besmele, Fâtiha ve zamm-ı sûre okunur; rükû ve iki secde yapılır.',''],
+    ['3. ADIM','İkinci rekât','Besmele, Fâtiha ve zamm-ı sûre okunur; rükû ve iki secde yapılır.',''],
+    ['4. ADIM','İlk oturuş','Ettehiyyâtü’den sonra Salli ve Bârik duaları okunur. Ardından üçüncü rekâta kalkılır.','salli'],
+    ['5. ADIM','Üçüncü rekât','Ayağa kalkınca önce Sübhaneke, ardından eûzü-besmele okunur; Fâtiha ve zamm-ı sûre okunur.','subhanaka'],
+    ['6. ADIM','Dördüncü rekât','Besmele, Fâtiha ve zamm-ı sûre okunur; rükû ve iki secde yapılır.',''],
+    ['7. ADIM','Son oturuş','Ettehiyyâtü, Salli, Bârik ve Rabbenâ duaları okunur.','tahiyyat'],
+    ['8. ADIM','Selam','Önce sağa, sonra sola selam verilerek namaz tamamlanır.','']
+  ];
+}
+
 const prayerParts = {
   sabah: [
     {title:'Sabah Sünneti', type:'Sünnet', rakats:'2 rekât', steps:genericTwo},
     {title:'Sabah Farzı', type:'Farz', rakats:'2 rekât', steps:genericTwo}
   ],
   ogle: [
-    {title:'Öğle İlk Sünneti', type:'Sünnet', rakats:'4 rekât', steps:fourFarzSteps},
+    {title:'Öğle İlk Sünneti', type:'Sünnet-i müekkede', rakats:'4 rekât', steps:fourSunnahMuakkadSteps},
     {title:'Öğle Farzı', type:'Farz', rakats:'4 rekât', steps:fourFarzSteps},
     {title:'Öğle Son Sünneti', type:'Sünnet', rakats:'2 rekât', steps:genericTwo}
   ],
   ikindi: [
-    {title:'İkindi Sünneti', type:'Nafile/Sünnet', rakats:'4 rekât', steps:fourFarzSteps, note:'İkindi sünneti, Hanefîlerde gayr-i müekked sünnet olarak ayrıca farklı bir ilk oturuş uygulamasına sahiptir. Ayrıntılı mezhep karşılaştırması sonraki sürümde ayrı seçenek olarak açılacaktır.'},
+    {title:'İkindi Sünneti', type:'Sünnet-i gayr-i müekkede', rakats:'4 rekât', steps:fourSunnahGayrMuakkadSteps, note:'Hanefî uygulamasında ilk oturuşta Salli ve Bârik; üçüncü rekâtın başında Sübhaneke okunur.'},
     {title:'İkindi Farzı', type:'Farz', rakats:'4 rekât', steps:fourFarzSteps}
   ],
   aksam: [
@@ -120,7 +151,7 @@ const prayerParts = {
     {title:'Akşam Sünneti', type:'Sünnet', rakats:'2 rekât', steps:genericTwo}
   ],
   yatsi: [
-    {title:'Yatsı İlk Sünneti', type:'Sünnet', rakats:'4 rekât', steps:fourFarzSteps, note:'Bu sünnet gayr-i müekked olduğundan ilk oturuş ve üçüncü rekâta başlangıç ayrıntıları Hanefîlerde farklı uygulanır.'},
+    {title:'Yatsı İlk Sünneti', type:'Sünnet-i gayr-i müekkede', rakats:'4 rekât', steps:fourSunnahGayrMuakkadSteps, note:'Hanefî uygulamasında ilk oturuşta Salli ve Bârik; üçüncü rekâtın başında Sübhaneke okunur.'},
     {title:'Yatsı Farzı', type:'Farz', rakats:'4 rekât', steps:fourFarzSteps},
     {title:'Yatsı Son Sünneti', type:'Sünnet', rakats:'2 rekât', steps:genericTwo},
     {title:'Vitir', type:'Vacip (Hanefî)', rakats:'3 rekât', steps:[
@@ -189,6 +220,13 @@ function renderHome(){
     <div class="section-head"><div><h3>Beş Vakit Namaz</h3><p>Günlük farz namazların rehberi</p></div><button class="back-btn" data-page="prayers">Tümünü gör</button></div>
     <section class="prayer-grid">${dailyPrayers.map(p=>prayerCard(p)).join('')}</section>
 
+    <section class="dashboard-strip">
+      <div class="mini-stat"><span>Günlük</span><strong>5 vakit</strong><small>Farz namazlar</small></div>
+      <div class="mini-stat"><span>Rehber</span><strong>Adım adım</strong><small>Hareket + dua</small></div>
+      <div class="mini-stat"><span>İçerik</span><strong>Hanefî</strong><small>Türkiye odaklı MVP</small></div>
+      <div class="mini-action" data-page="duas"><span>✦</span><div><strong>Duaları aç</strong><small>Temel metinleri hızlıca tekrar et</small></div><b>→</b></div>
+    </section>
+
     <section class="quick-grid">
       <div class="panel">
         <h3>Rehber nasıl çalışır?</h3>
@@ -242,7 +280,7 @@ function renderPrayerDetail(){
           <div class="step-tabs">${parts.map((p,i)=>`<button class="back-btn" data-part="${i}" style="margin-right:7px;background:${i===app.currentPart?'#eaf1ed':'#fff'};margin-bottom:9px">${p.title}</button>`).join('')}</div>
           <div id="stepMount"></div>
         </section>
-        <aside class="visual-card"><div class="visual-head"><strong>Görsel / Video alanı</strong><span style="font-size:10px;color:#75633a">MVP</span></div><div class="video-shell"><div class="crescent">☪</div><span id="visualCaption">Adımlar için görsel anlatım alanı</span></div><p class="visual-note">İlk sürümde telif ve kaynak güvenliği için burada hazır görsel yerine sembolik sahne kullanılıyor. Gerçek video URL'leri <code>app.js</code> içindeki veri alanına bağlanabilir.</p></aside>
+        <aside class="visual-card"><div class="visual-head"><strong>Görsel / Video alanı</strong><span style="font-size:10px;color:#75633a">MVP</span></div><div class="video-shell"><div class="posture-glyph" id="postureGlyph">☾</div><div class="crescent">✦</div><span id="visualCaption">Adımlar için görsel anlatım alanı</span></div><p class="visual-note">İlk sürümde telif ve kaynak güvenliği için burada hazır görsel yerine sembolik sahne kullanılıyor. Gerçek video URL'leri <code>app.js</code> içindeki veri alanına bağlanabilir.</p></aside>
       </div>
     `;
     mountStep(current);
@@ -258,6 +296,7 @@ function mountStep(part){
   const counter=document.getElementById('stepCounter'); if(counter) counter.textContent=`${app.currentStep+1} / ${part.steps.length}`;
   const caption=document.getElementById('visualCaption'); if(caption) caption.textContent=s[1];
   const d=s[3] ? dua[s[3]] : null;
+  const postureGlyph = /rükû/i.test(s[1]) ? '↘' : /secde/i.test(s[1]) ? '⌄' : /oturuş/i.test(s[1]) ? '◡' : /selam/i.test(s[1]) ? '↔' : /kalk/i.test(s[1]) ? '↑' : '☾';
   document.getElementById('stepMount').innerHTML=`
     <div class="step-card">
       <div>
@@ -268,6 +307,7 @@ function mountStep(part){
       <div class="step-actions"><button class="action-btn secondary" data-prev ${app.currentStep===0?'disabled':''}>← Önceki</button><button class="action-btn" data-next>${app.currentStep===part.steps.length-1?'Tamamla':'Sonraki →'}</button></div>
     </div>
   `;
+  const pg=document.getElementById('postureGlyph'); if(pg) pg.textContent=postureGlyph;
   if(part.note){
     const note=document.createElement('p'); note.className='visual-note'; note.style.marginTop='14px'; note.textContent=part.note; document.getElementById('stepMount').appendChild(note);
   }
@@ -321,13 +361,13 @@ function specialSteps(id){
 
 function renderDuas(){
   pageTitle.textContent='Dualar ve Tesbihler';
-  const keys=['subhanaka','ruku','qawmah','sujood','tahiyyat','salli','barik','rabbena','qunut1','qunut2'];
+  const keys=['subhanaka','ruku','qawmah','sujood','tahiyyat','salli','barik','rabbena','rabbena_magfira','qunut1','qunut2'];
   view.innerHTML=`<section class="section-head"><div><h3>Namaz içinde geçen temel metinler</h3><p>Arapça + Türkçe okunuşu</p></div></section><section class="dua-grid">${keys.map(k=>{const d=dua[k];return `<article class="dua-card"><h3>${d.title}</h3><div class="arabic">${d.arabic}</div><div class="translit">${d.translit}</div><small>Uygulamada bunun yanına sesli dinleme, favori ve tekrar modu eklenebilir.</small></article>`}).join('')}</section>`;
 }
 
 function renderAbout(){
   pageTitle.textContent='RÜKÛ hakkında';
-  view.innerHTML=`<section class="about-grid"><div class="source-card"><h3>İçerik yaklaşımı</h3><p>Bu MVP, Türkiye’de Diyanet İşleri Başkanlığı kaynaklarında anlatılan Hanefî uygulamasını temel alır. Mezhepler arasında farklılık bulunan yerlerde uygulama “tek doğru varmış” gibi davranmak yerine farkı etiketlemelidir.</p></div><div class="source-card"><h3>Ürün vizyonu</h3><p>Bir sonraki sürümde vakit API’si, konum, kıble, sesli ezan/uyarı, video kılavuzları, ilerleme takibi, kadın/erkek anlatım seçimi, Hanefî/Şafiî içerik seçici ve içerik doğrulama paneli eklenebilir.</p></div></section><section class="section-head"><div><h3>Kaynaklandırma</h3><p>Canlı uygulamada her bilgi kartına “Kaynak” düğmesi eklenebilir.</p></div></section><section class="all-prayers"><article class="other-card"><h4>Diyanet Namaz İlmihali</h4><p>Namazların kılınışı, rekât türleri ve görsel anlatım bölümleri.</p><span class="tag">Resmî kaynak</span></article><article class="other-card"><h4>Diyanet Din İşleri Yüksek Kurulu</h4><p>Vitir, cuma, bayram, teravih, teheccüd ve benzeri konularda fetva ve açıklamalar.</p><span class="tag">Resmî kaynak</span></article></section>`;
+  view.innerHTML=`<section class="about-grid"><div class="source-card"><h3>İçerik yaklaşımı</h3><p>Bu MVP, Türkiye’de Diyanet İşleri Başkanlığı kaynaklarında anlatılan Hanefî uygulamasını temel alır. Mezhepler arasında farklılık bulunan yerlerde uygulama “tek doğru varmış” gibi davranmak yerine farkı etiketlemelidir.</p></div><div class="source-card"><h3>Ürün vizyonu</h3><p>Bir sonraki sürümde vakit API’si, konum, kıble, sesli ezan/uyarı, video kılavuzları, ilerleme takibi, kadın/erkek anlatım seçimi, Hanefî/Şafiî içerik seçici ve içerik doğrulama paneli eklenebilir.</p></div></section><section class="section-head"><div><h3>Kaynaklandırma</h3><p>Canlı uygulamada her bilgi kartına “Kaynak” düğmesi eklenebilir.</p></div></section><section class="all-prayers"><article class="other-card"><h4>Diyanet Namaz İlmihali</h4><p>Namazların kılınışı, rekât türleri ve mezheplere göre farklılıklar için temel kaynak.</p><a class="source-link" href="https://namaz.diyanet.gov.tr/namaz/assets/dosya/Namaz_ilmihali_2011%28SON%29.pdf" target="_blank" rel="noopener">Kaynağı aç →</a><span class="tag">Resmî kaynak</span></article><article class="other-card"><h4>Diyanet Din İşleri Yüksek Kurulu</h4><p>Vitir, cuma, bayram, teravih, teheccüd ve benzeri konularda fetva ve açıklamalar.</p><a class="source-link" href="https://kurul.diyanet.gov.tr/" target="_blank" rel="noopener">Kaynağı aç →</a><span class="tag">Resmî kaynak</span></article></section>`;
 }
 
 function showDua(id){
